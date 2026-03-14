@@ -1,0 +1,29 @@
+/* global design for the site */
+:root {
+  --bg-color: #d8d3d3; 
+  --primary-purple: #9b51e0; 
+  --text-dark: #1a1a1a;
+  --max-width: 1100px; 
+  --padding-side: 20px;
+}
+
+body {
+  background-color: var(--bg-color);
+  color: var(--text-dark);
+  font-family: "Poppins", sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+/* shared desing here */
+
+.container {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 0 var(--padding-side);
+}
+
+
+
+
+
