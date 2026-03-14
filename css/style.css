@@ -1,29 +1,231 @@
 /* global design for the site */
 :root {
-  --bg-color: #d8d3d3; 
-  --primary-purple: #9b51e0; 
-  --text-dark: #1a1a1a;
-  --max-width: 1100px; 
-  --padding-side: 20px;
+    --bg-color: #d8d3d3;
+    --primary-purple: #9b51e0;
+    /* --text-dark: #1a1a1a; */
+    --max-width: 1100px;
+    --padding-side: 20px;
 }
 
 body {
-  background-color: var(--bg-color);
-  color: var(--text-dark);
-  font-family: "Poppins", sans-serif;
-  margin: 0;
-  padding: 0;
+    background-color: var(--bg-color);
+    /* color: var(--text-dark); */
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+    margin: 0;
+    padding: 0;
 }
 
 /* shared desing here */
 
 .container {
-  max-width: var(--max-width);
-  margin: 0 auto;
-  padding: 0 var(--padding-side);
+    max-width: var(--max-width);
+    margin: 0 auto;
+    padding: 0 var(--padding-side);
+}
+
+.btn-demo {
+    border: 1px solid #9b51e0;
+    background: none;
+    border-radius: 25px;
+    padding: 10px 20px;
+    color: #9b51e0;
 }
 
 
 
 
+/* Navbar */
+header {
+    background-color: white;
+}
 
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 0;
+    position: relative;
+}
+
+.nav-links {
+    display: flex;
+    list-style: none;
+    gap: 30px;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: #333;
+    font-weight: 500;
+}
+
+.nav-actions {
+    display: flex;
+    gap: 10px;
+}
+
+.btn-login {
+    border: none;
+    background: none;
+    cursor: pointer;
+    padding: 10px 20px;
+}
+
+
+
+.logo {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+}
+
+.logo img {
+    height: 45px;
+    width: auto;
+    border-radius: 45%;
+    display: block;
+    -webkit-border-radius: 45%;
+    -moz-border-radius: 45%;
+    -ms-border-radius: 45%;
+    -o-border-radius: 45%;
+}
+
+/* Mobile menu */
+.mobile-menu {
+    display: none;
+    cursor: pointer;
+    font-size: 24px;
+    color: #333;
+}
+
+
+/* hero section */
+
+.hero {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 60px 0;
+}
+
+.hero-content {
+    flex: 1;
+    padding-right: 40px;
+}
+
+.badge {
+    background-color: white;
+    padding: 2vh;
+    border-radius: 10px;
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    -ms-border-radius: 10px;
+    -o-border-radius: 10px;
+}
+
+h1 {
+    font-size: 3rem;
+    line-height: 1.2;
+}
+
+h1 span {
+    color: #9b51e0;
+}
+
+.btn-start {
+    background: #9b51e0;
+    color: white;
+    border: none;
+    padding: 12px 25px;
+    border-radius: 25px;
+}
+
+.hero-images {
+    display: flex;
+    gap: 20px;
+}
+
+.video-card {
+    width: 300px;
+    height: 400px;
+    background: #2a001a;
+    border-radius: 20px;
+    overflow: hidden;
+    position: relative;
+    cursor: pointer;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+}
+
+.video-card video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+.video-card::after {
+    content: '\f04b';
+
+    font-weight: 900;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: white;
+    font-size: 2.5rem;
+    opacity: 0.7;
+    transition: 0.3s;
+    pointer-events: none;
+}
+
+.video-card.playing::after {
+    opacity: 0;
+}
+
+
+/* Social Media Card - Modern Upgrade */
+.socailMedia {
+    background: rgba(255, 255, 255, 0.8);
+    backdrop-filter: blur(10px);
+    /* Glassmorphism effect */
+    padding: 12px 24px;
+    margin-top: 30px;
+    border-radius: 50px;
+    /* Pill shape is more modern */
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+    max-width: fit-content;
+    /* Only as wide as the icons */
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    display: inline-block;
+}
+
+.socailMedia ul {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+/* Social icon wrapper */
+.socailMedia li img {
+    width: 45px;
+    height: 45px;
+    padding: 8px;
+    /* Added padding to make it look like a branded button */
+    background: #f8f9fa;
+    border-radius: 50%;
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    cursor: pointer;
+    object-fit: contain;
+}
+
+/* Hover effect - Floating & Glow */
+.socailMedia li img:hover {
+    transform: translateY(-8px) scale(1.1);
+    background: #ffffff;
+    box-shadow: 0 15px 25px rgba(155, 81, 224, 0.2);
+    border: 1px solid #9b51e0;
+}

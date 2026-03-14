@@ -1,0 +1,198 @@
+@media (max-width: 992px) {
+    .mobile-menu {
+        display: block;
+    }
+
+    /* The Sidebar: Combine links and actions into one sidebar */
+    .nav-links,
+    .nav-actions {
+        position: fixed;
+        top: 0;
+        right: -100%;
+        height: 100vh;
+        width: 280px;
+        background: #fff;
+        display: flex;
+        flex-direction: column;
+        padding-top: 100px;
+        padding-left: 2rem;
+        transition: 0.4s ease-in-out;
+        box-shadow: -5px 0 15px rgba(0, 0, 0, 0.1);
+        z-index: 1000;
+        gap: 1.5rem;
+    }
+
+    /* Trigger for JS */
+    .nav-links.active,
+    .nav-actions.active {
+        right: 0;
+    }
+
+    /* Style sidebar items */
+    .nav-links a {
+        font-size: 18px;
+        padding: 10px 0;
+        border-bottom: 1px solid #eee;
+    }
+
+    .nav-actions {
+        padding-top: 20px;
+        gap: 1rem;
+    }
+
+    .nav-actions button {
+        width: 100%;
+        text-align: left;
+        padding: 12px 0;
+        font-size: 16px;
+    }
+
+    /* Overlay */
+    .menu-overlay {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0, 0, 0, 0.5);
+        opacity: 0;
+        visibility: hidden;
+        transition: 0.3s;
+        z-index: 999;
+    }
+
+    .menu-overlay.active {
+        opacity: 1;
+        visibility: visible;
+    }
+}
+
+
+
+/* hero section */
+
+
+
+.hero {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 60px 0;
+    gap: 40px;
+}
+
+.hero-content {
+    flex: 1;
+}
+
+h1 {
+    font-size: clamp(2rem, 5vw, 3.5rem);
+    line-height: 1.2;
+    margin-bottom: 20px;
+}
+
+h1 span {
+    color: #9b51e0;
+}
+
+.btn-start {
+    background: #9b51e0;
+    color: white;
+    border: none;
+    padding: 12px 30px;
+    border-radius: 25px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: transform 0.2s ease;
+}
+
+.btn-start:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(155, 81, 224, 0.4);
+}
+
+.hero-images {
+    display: flex;
+    gap: 20px;
+    flex: 1;
+    justify-content: flex-end;
+}
+
+.video-card {
+    width: 100%;
+    max-width: 300px;
+    aspect-ratio: 3 / 4;
+    background: #2a001a;
+    border-radius: 20px;
+}
+
+@media (max-width: 992px) {
+    .hero {
+        flex-direction: column;
+        text-align: center;
+        padding: 40px 0;
+    }
+
+    .hero-content {
+        padding-right: 0;
+        margin-bottom: 50px;
+    }
+
+    .hero-images {
+        justify-content: center;
+        width: 100%;
+    }
+
+    .video-card {
+        max-width: 250px;
+    }
+}
+
+@media (max-width: 600px) {
+    .hero-images {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .video-card {
+        max-width: 100%;
+        height: 350px;
+    }
+
+    h1 {
+        font-size: 2.2rem;
+    }
+}
+
+
+
+/* social media card */
+
+
+/* Responsive - Tablet & Mobile */
+@media (max-width: 992px) {
+    .socailMedia {
+        margin: 30px auto;
+        /* Centers the pill on tablet/mobile */
+        display: block;
+        max-width: max-content;
+    }
+}
+
+@media (max-width: 480px) {
+    .socailMedia {
+        padding: 10px 18px;
+        border-radius: 20px;
+        /* Slightly less rounded for better screen fit */
+    }
+
+    .socailMedia ul {
+        gap: 15px;
+    }
+
+    .socailMedia li img {
+        width: 38px;
+        height: 38px;
+        padding: 6px;
+    }
+}
