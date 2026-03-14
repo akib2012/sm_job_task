@@ -196,3 +196,37 @@ h1 span {
         padding: 6px;
     }
 }
+
+
+
+/* service of the pakages */
+
+@media (max-width: 992px) {
+    .services-card {
+        flex-direction: column;
+        padding: 20px;
+    }
+
+    .services-left {
+        border-right: none;
+        border-bottom: 1px solid #eee;
+        padding-right: 0;
+        padding-bottom: 30px;
+    }
+}
+
+
+
+/* .............. */
+
+/* Responsive adjustment */
+@media (max-width: 768px) {
+    .header-text h2 {
+        font-size: 2rem;
+    }
+
+    .features-grid,
+    .services-grid {
+        gap: 15px;
+    }
+}

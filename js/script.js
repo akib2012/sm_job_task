@@ -22,9 +22,6 @@ document.querySelectorAll(".nav-links a").forEach((link) => {
   link.addEventListener("click", toggleNav);
 });
 
-
-
-
 // for the video paly and contronl
 
 const videoCards = document.querySelectorAll(".video-card");
@@ -49,5 +46,35 @@ videoCards.forEach((card) => {
   }
 });
 
+// dynamin client section
+const track = document.querySelector(".logo-track");
+const images = Array.from(track.children);
 
+// Clone the logos to create a seamless loop
+images.forEach((img) => {
+  const clone = img.cloneNode(true);
+  track.appendChild(clone);
+});
 
+// Optional: Pause animation on hover
+track.addEventListener("mouseenter", () => {
+  track.style.animationPlayState = "paused";
+});
+
+track.addEventListener("mouseleave", () => {
+  track.style.animationPlayState = "running";
+});
+
+// sevice of pakages
+
+function selectPackage(element) {
+  // Remove 'selected' class from all options
+  document.querySelectorAll(".package-option").forEach((opt) => {
+    opt.classList.remove("selected");
+    opt.querySelector('input[type="radio"]').checked = false;
+  });
+
+  // Add 'selected' class to the clicked one
+  element.classList.add("selected");
+  element.querySelector('input[type="radio"]').checked = true;
+}
