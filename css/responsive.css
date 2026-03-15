@@ -1,72 +1,92 @@
 @media (max-width: 992px) {
+
     .mobile-menu {
         display: block;
+        z-index: 1100;
     }
 
-    /* The Sidebar: Combine links and actions into one sidebar */
-    .nav-links,
-    .nav-actions {
+    /* sidebar */
+
+    .nav-links {
         position: fixed;
         top: 0;
         right: -100%;
+        width: 260px;
         height: 100vh;
-        width: 280px;
-        background: #fff;
-        display: flex;
+        background: white;
         flex-direction: column;
         padding-top: 100px;
-        padding-left: 2rem;
-        transition: 0.4s ease-in-out;
+        padding-left: 30px;
+        gap: 20px;
+        transition: 0.4s;
         box-shadow: -5px 0 15px rgba(0, 0, 0, 0.1);
         z-index: 1000;
-        gap: 1.5rem;
     }
 
-    /* Trigger for JS */
-    .nav-links.active,
-    .nav-actions.active {
+    .nav-links.active {
         right: 0;
     }
 
-    /* Style sidebar items */
+    .nav-links li {
+        width: 100%;
+    }
+
     .nav-links a {
         font-size: 18px;
+        display: block;
         padding: 10px 0;
         border-bottom: 1px solid #eee;
     }
 
+    /* buttons inside sidebar */
+
     .nav-actions {
-        padding-top: 20px;
-        gap: 1rem;
+        position: fixed;
+        right: -100%;
+        top: 420px;
+        width: 260px;
+        display: flex;
+        flex-direction: column;
+        padding-left: 30px;
+        gap: 15px;
+        transition: 0.4s;
+        z-index: 1000;
+        background: white;
+    }
+
+    .nav-actions.active {
+        right: 0;
     }
 
     .nav-actions button {
-        width: 100%;
-        text-align: left;
-        padding: 12px 0;
-        font-size: 16px;
+        width: 90%;
+        text-align: center;
     }
 
-    /* Overlay */
-    .menu-overlay {
-        position: fixed;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        background: rgba(0, 0, 0, 0.5);
-        opacity: 0;
-        visibility: hidden;
-        transition: 0.3s;
-        z-index: 999;
-    }
-
-    .menu-overlay.active {
-        opacity: 1;
-        visibility: visible;
-    }
 }
 
+
+/* ============================= */
+/* overlay */
+/* ============================= */
+
+.menu-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.4);
+    opacity: 0;
+    visibility: hidden;
+    transition: 0.3s;
+    z-index: 900;
+}
+
+.menu-overlay.active {
+    opacity: 1;
+    visibility: visible;
+}
 
 
 /* hero section */
@@ -265,5 +285,74 @@ h1 span {
 @media (max-width: 600px) {
     .faq-container {
         padding: 10px;
+    }
+}
+
+
+/* footer design here */
+
+/* Tablet View (992px) */
+@media (max-width: 992px) {
+    .footer-top {
+        grid-template-columns: 1fr 1fr;
+        /* 2x2 Grid */
+        gap: 50px 30px;
+    }
+
+    /* Make About and Contact take full width to ground the design */
+    .footer-col.about,
+    .footer-col.contact {
+        grid-column: span 2;
+        background: #fdfbff;
+        /* Subtle background for priority sections */
+        padding: 30px;
+        border-radius: 20px;
+    }
+}
+
+/* Mobile View (600px) */
+@media (max-width: 600px) {
+    .footer-top {
+        grid-template-columns: 1fr;
+        /* Single column */
+        text-align: center;
+    }
+
+    .footer-col.about,
+    .footer-col.contact {
+        grid-column: span 1;
+        padding: 20px;
+    }
+
+    .footer-col h3 {
+        margin-bottom: 15px;
+    }
+
+    /* Underline headers on mobile for visual separation */
+    .footer-col h3::after {
+        content: '';
+        display: block;
+        width: 40px;
+        height: 2px;
+        background: #9b51e0;
+        margin: 8px auto 0;
+        border-radius: 2px;
+    }
+
+    .footer-btns {
+        flex-direction: column;
+        gap: 12px;
+        align-items: center;
+    }
+
+    .btn-footer-login,
+    .btn-footer-demo {
+        width: 100%;
+        max-width: 280px;
+    }
+
+    .footer-col ul li a:hover {
+        transform: translateY(-3px);
+        /* Pop up on mobile instead of sliding */
     }
 }

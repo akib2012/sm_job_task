@@ -4,27 +4,36 @@ const navActions = document.querySelector(".nav-actions");
 const overlay = document.querySelector(".menu-overlay");
 
 function toggleNav() {
+
   navLinks.classList.toggle("active");
   navActions.classList.toggle("active");
   overlay.classList.toggle("active");
 
-  // Change icon
   const icon = mobileMenu.querySelector("i");
-  icon.classList.toggle("fa-bars");
-  icon.classList.toggle("fa-times");
+
+  if(icon.classList.contains("fa-bars")){
+      icon.classList.remove("fa-bars");
+      icon.classList.add("fa-times");
+  } else{
+      icon.classList.remove("fa-times");
+      icon.classList.add("fa-bars");
+  }
+
 }
 
 mobileMenu.addEventListener("click", toggleNav);
 overlay.addEventListener("click", toggleNav);
 
-// Auto-close on click
-document.querySelectorAll(".nav-links a").forEach((link) => {
-  link.addEventListener("click", toggleNav);
+/* close menu when click link */
+
+document.querySelectorAll(".nav-links a").forEach(link => {
+    link.addEventListener("click", toggleNav);
 });
 
 // for the video paly and contronl
 
-const videoCards = document.querySelectorAll(".video-card");
+// Target the correct class name used in your HTML
+const videoCards = document.querySelectorAll(".video-card1");
 
 videoCards.forEach((card) => {
   const video = card.querySelector("video");
@@ -32,6 +41,12 @@ videoCards.forEach((card) => {
   if (video) {
     card.addEventListener("click", () => {
       if (video.paused) {
+        // Pause all other videos before playing this one (Modern UX)
+        videoCards.forEach((c) => {
+          c.querySelector("video").pause();
+          c.classList.remove("playing");
+        });
+
         video.play();
         card.classList.add("playing");
       } else {
@@ -41,8 +56,6 @@ videoCards.forEach((card) => {
     });
 
     video.loop = true;
-
-    video.muted = false;
   }
 });
 
@@ -79,45 +92,40 @@ function selectPackage(element) {
   element.querySelector('input[type="radio"]').checked = true;
 }
 
-
 // Horizontal scroll function
 function scrollCarousel() {
-    const track = document.getElementById('carouselTrack');
-    track.scrollBy({ left: 300, behavior: 'smooth' });
+  const track = document.getElementById("carouselTrack");
+  track.scrollBy({ left: 300, behavior: "smooth" });
 }
 
 // Play/Stop toggle logic
 function togglePlay(card) {
-    const icon = card.querySelector('.play-icon');
-    
-    // Toggle state
-    if (card.classList.contains('playing')) {
-        card.classList.remove('playing');
-        icon.innerText = '▶';
-        // Insert logic here to pause your video element
-        console.log("Video Paused");
-    } else {
-        card.classList.add('playing');
-        icon.innerText = '⏸';
-        // Insert logic here to play your video element
-        console.log("Video Playing");
-    }
+  const icon = card.querySelector(".play-icon");
+
+  // Toggle state
+  if (card.classList.contains("playing")) {
+    card.classList.remove("playing");
+    icon.innerText = "▶";
+    // Insert logic here to pause your video element
+    console.log("Video Paused");
+  } else {
+    card.classList.add("playing");
+    icon.innerText = "⏸";
+    // Insert logic here to play your video element
+    console.log("Video Playing");
+  }
 }
-
-
-
 
 // frequently ask question
 
-
 function toggleFAQ(element) {
-    const item = element.parentElement;
-    
-    // Optional: Close other open items
-    document.querySelectorAll('.faq-item').forEach(i => {
-        if (i !== item) i.classList.remove('active');
-    });
+  const item = element.parentElement;
 
-    // Toggle current item
-    item.classList.toggle('active');
+  // Optional: Close other open items
+  document.querySelectorAll(".faq-item").forEach((i) => {
+    if (i !== item) i.classList.remove("active");
+  });
+
+  // Toggle current item
+  item.classList.toggle("active");
 }
