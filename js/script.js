@@ -78,3 +78,28 @@ function selectPackage(element) {
   element.classList.add("selected");
   element.querySelector('input[type="radio"]').checked = true;
 }
+
+
+// Horizontal scroll function
+function scrollCarousel() {
+    const track = document.getElementById('carouselTrack');
+    track.scrollBy({ left: 300, behavior: 'smooth' });
+}
+
+// Play/Stop toggle logic
+function togglePlay(card) {
+    const icon = card.querySelector('.play-icon');
+    
+    // Toggle state
+    if (card.classList.contains('playing')) {
+        card.classList.remove('playing');
+        icon.innerText = '▶';
+        // Insert logic here to pause your video element
+        console.log("Video Paused");
+    } else {
+        card.classList.add('playing');
+        icon.innerText = '⏸';
+        // Insert logic here to play your video element
+        console.log("Video Playing");
+    }
+}

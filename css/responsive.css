@@ -230,3 +230,29 @@ h1 span {
         gap: 15px;
     }
 }
+
+
+
+
+/* for personal branding */
+
+/* Responsive */
+@media (max-width: 600px) {
+    .video-card {
+        min-width: 200px;
+    }
+}
+
+
+
+/* why short video is so populer */
+
+
+@media (max-width: 768px) {
+
+    .hero,
+    .popularity {
+        flex-direction: column;
+        text-align: center;
+    }
+}

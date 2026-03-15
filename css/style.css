@@ -146,7 +146,7 @@ h1 span {
     gap: 20px;
 }
 
-.video-card {
+.video-card1 {
     width: 300px;
     height: 400px;
     background: #2a001a;
@@ -157,29 +157,28 @@ h1 span {
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
 }
 
-.video-card video {
+.video-card1 {
+    background: white;
+    border-radius: 14px;
+    overflow: hidden;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.12);
+    transition: all 0.3s ease;
+}
+
+/* hover effect */
+.video-card1:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 18px 40px rgba(0, 0, 0, 0.18);
+}
+
+.video-card1 video {
     width: 100%;
     height: 100%;
     object-fit: cover;
     display: block;
 }
 
-.video-card::after {
-    content: '\f04b';
-
-    font-weight: 900;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    color: white;
-    font-size: 2.5rem;
-    opacity: 0.7;
-    transition: 0.3s;
-    pointer-events: none;
-}
-
-.video-card.playing::after {
+.video-card1.playing::after {
     opacity: 0;
 }
 
@@ -394,14 +393,15 @@ h1 span {
 }
 
 .badge {
-    position: absolute;
-    top: -10px;
-    left: 20px;
-    background: #4a5568;
-    color: white;
-    font-size: 10px;
-    padding: 2px 10px;
+
+
+    background: white;
+    /* color: white; */
+    font-size: 20px;
+    padding: 10px;
     border-radius: 5px;
+
+
 }
 
 .custom-radio {
@@ -499,8 +499,133 @@ video-services {
 }
 
 .service-card {
-    background: #f8f9fa;
+
     padding: 30px;
     border-radius: 15px;
-    border: 1px solid #eee;
+    border: 2px solid #eee;
 }
+
+
+
+
+/* personal branding add here */
+
+.personal-brands {
+    padding: 60px 5%;
+    font-family: sans-serif;
+}
+
+.header h2 {
+    font-size: 2.5rem;
+    margin-bottom: 30px;
+}
+
+.header h2 span {
+    color: #9b51e0;
+}
+
+.carousel-wrapper {
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+.carousel-track {
+    display: flex;
+    gap: 25px;
+    overflow-x: auto;
+    scroll-behavior: smooth;
+    padding: 20px 0;
+    scrollbar-width: none;
+}
+
+.carousel-track::-webkit-scrollbar {
+    display: none;
+}
+
+.video-card {
+    min-width: 280px;
+    position: relative;
+    cursor: pointer;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.video-card video {
+    width: 100%;
+    height: 350px;
+    border-radius: 20px;
+    object-fit: cover;
+    display: block;
+    background: #000;
+}
+
+.video-card p {
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: white;
+    margin: 0;
+    display: block;
+    visibility: visible;
+    padding-bottom: 20px;
+}
+
+.play-icon {
+    position: absolute;
+    top: 175px;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: rgba(0, 0, 0, 0.5);
+    color: white;
+    width: 50px;
+    height: 50px;
+    line-height: 50px;
+    border-radius: 50%;
+    font-size: 20px;
+    pointer-events: none;
+    transition: 0.3s;
+}
+
+.next-btn {
+    position: absolute;
+    right: -10px;
+    background: #fff;
+    border: 1px solid #ddd;
+    padding: 15px 20px;
+    border-radius: 50%;
+    cursor: pointer;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    z-index: 10;
+}
+
+
+/* why short video is so populer */
+
+
+.popularity {
+    display: flex;
+    align-items: center;
+    gap: 50px;
+    padding: 50px;
+}
+
+.pop-image {
+    flex: 1;
+}
+
+.pop-image img {
+    width: 100%;
+    border-radius: 20px;
+}
+
+.pop-text {
+    flex: 1;
+}
+
+h2 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+}
+
