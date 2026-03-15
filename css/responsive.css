@@ -256,3 +256,14 @@ h1 span {
         text-align: center;
     }
 }
+
+
+
+/* frequently ask question */
+
+
+@media (max-width: 600px) {
+    .faq-container {
+        padding: 10px;
+    }
+}

@@ -103,3 +103,21 @@ function togglePlay(card) {
         console.log("Video Playing");
     }
 }
+
+
+
+
+// frequently ask question
+
+
+function toggleFAQ(element) {
+    const item = element.parentElement;
+    
+    // Optional: Close other open items
+    document.querySelectorAll('.faq-item').forEach(i => {
+        if (i !== item) i.classList.remove('active');
+    });
+
+    // Toggle current item
+    item.classList.toggle('active');
+}
