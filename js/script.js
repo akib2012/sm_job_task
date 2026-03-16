@@ -170,6 +170,135 @@ function togglePlay(card) {
   }
 }
 
+/* testimonial video controll  */
+
+// Select all testimonial cards
+/* ===============================
+   TESTIMONIAL VIDEO CONTROLS
+================================ */
+
+const testiCards = document.querySelectorAll(".testi-card");
+
+testiCards.forEach((card) => {
+  const video = card.querySelector("video");
+  const playBtn = card.querySelector(".play-btn i");
+
+  card.querySelector(".play-btn").addEventListener("click", () => {
+    // Pause all other videos
+    testiCards.forEach((otherCard) => {
+      if (otherCard !== card) {
+        const otherVideo = otherCard.querySelector("video");
+        const otherIcon = otherCard.querySelector(".play-btn i");
+
+        otherVideo.pause();
+        otherIcon.classList.remove("fa-pause");
+        otherIcon.classList.add("fa-play");
+      }
+    });
+
+    // Toggle current video
+    if (video.paused) {
+      video.play();
+      playBtn.classList.remove("fa-play");
+      playBtn.classList.add("fa-pause");
+    } else {
+      video.pause();
+      playBtn.classList.remove("fa-pause");
+      playBtn.classList.add("fa-play");
+    }
+  });
+
+  // Reset icon when video ends
+  video.addEventListener("ended", () => {
+    playBtn.classList.remove("fa-pause");
+    playBtn.classList.add("fa-play");
+  });
+});
+
+
+
+
+//   CLIENT REVIEWS SECTION
+
+const reviewsGrid = document.getElementById("reviewsGrid");
+
+// Create review card
+function createReviewCard(review) {
+  const card = document.createElement("div");
+  card.classList.add("review-card");
+
+  card.innerHTML = `
+    <div class="review-top">
+
+        <div class="review-user">
+            <img src="./assets/images/logo.jpg" alt="User">
+
+            <div class="review-user-info">
+                <h4>${review.name}</h4>
+                <p>${review.position}</p>
+            </div>
+        </div>
+
+        <div class="review-rating">
+            <i class="fa-solid fa-star"></i> ${review.rating}
+        </div>
+
+    </div>
+
+    <div class="review-text">
+        <span class="quote-start">“</span>
+        <p>${review.description}</p>
+        <span class="quote-end">”</span>
+    </div>
+  `;
+
+  return card;
+}
+
+// Placeholder if JSON fails
+function showPlaceholder() {
+  const placeholder = {
+    name: "John Doe",
+    position: "Customer",
+    rating: "5.0",
+    description: "No reviews available right now.",
+  };
+
+  const card = createReviewCard(placeholder);
+  reviewsGrid.appendChild(card);
+}
+
+// Fetch JSON reviews
+fetch("/assets/data/reviews.json")
+  .then((response) => {
+    if (!response.ok) throw new Error("JSON not found");
+
+    return response.json();
+  })
+  .then((data) => {
+    if (!Array.isArray(data) || data.length === 0) {
+      showPlaceholder();
+      return;
+    }
+
+    data.forEach((review) => {
+      const card = createReviewCard(review);
+      reviewsGrid.appendChild(card);
+    });
+  })
+  .catch((error) => {
+    console.error("Error loading reviews:", error);
+    showPlaceholder();
+  });
+
+
+
+
+
+
+
+
+/* this is for the frequently Ask q and n */
 function toggleFAQ(element) {
   const item = element.parentElement;
 

@@ -242,17 +242,23 @@
 
 /* clinet reviews here */
 
-@media (max-width: 992px) {
-    .testi-slider {
-        display: flex;
-        overflow-x: auto;
-        scroll-snap-type: x mandatory;
-        gap: 15px;
+@media (min-width: 768px) {
+    .reviews-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+
+@media (min-width: 1024px) {
+    .reviews-grid {
+        grid-template-columns: repeat(3, 1fr);
     }
 
-    .testi-card {
-        min-width: 280px;
-        scroll-snap-align: start;
+    
+    .review-card:nth-child(1),
+    .review-card:nth-child(2) {
+        grid-column: span 1;
+        
     }
 }
 

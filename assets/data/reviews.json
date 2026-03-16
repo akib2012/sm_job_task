@@ -1,0 +1,32 @@
+[
+    {
+        "name": "Andrei Kasyanau",
+        "position": "CEO at Glorium Technologies",
+        "rating": 4.8,
+        "description": "Our smart developers build innovative, efficient, and high-performance solutions. Efficient, and high-performance solutions."
+    },
+    {
+        "name": "Sara Johnson",
+        "position": "CTO at Innovatech",
+        "rating": 4.5,
+        "description": "Highly skilled team delivering solutions that improve business efficiency and drive growth."
+    },
+    {
+        "name": "Michael Smith",
+        "position": "Product Manager at NextGen Solutions",
+        "rating": 4.9,
+        "description": "Their team provided excellent support and delivered a product that exceeded expectations."
+    },
+    {
+        "name": "Priya Patel",
+        "position": "Head of Design at Creatix",
+        "rating": 4.7,
+        "description": "Professional and innovative designers who really understand the user experience."
+    },
+    {
+        "name": "John Doe",
+        "position": "Founder at TechNova",
+        "rating": 4.6,
+        "description": "They consistently deliver high-quality solutions on time and with great attention to detail."
+    }
+]
