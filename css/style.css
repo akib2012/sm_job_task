@@ -30,6 +30,13 @@ body {
     color: #9b51e0;
 }
 
+.btn-demo:hover {
+    background: #9b51e0;
+    color: white;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 15px rgba(155, 81, 224, 0.35);
+}
+
 
 
 
@@ -83,20 +90,20 @@ header {
 }
 
 .btn-login {
-    border: none;
-    background: none;
+    border: 1px #344054 solid;
     cursor: pointer;
-    padding: 10px 20px;
-}
-
-.btn-demo {
-    border: 1px solid #9b51e0;
     background: none;
     border-radius: 25px;
     padding: 10px 20px;
-    color: #9b51e0;
-    cursor: pointer;
 }
+
+.btn-login:hover {
+    background: #344054;
+    color: white;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
+}
+
 
 /* mobile icon */
 
@@ -1042,7 +1049,7 @@ header {
     width: 100%;
     border-radius: 20px;
     display: block;
-   
+
 }
 
 /* Headline & paragraph */
