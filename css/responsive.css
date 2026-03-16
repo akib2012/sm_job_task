@@ -5,7 +5,18 @@
         z-index: 1100;
     }
 
+    .navbar {
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+
     /* sidebar */
+    .mobile-menu-title {
+        font-size: 20px;
+        font-weight: 600;
+        margin-bottom: 30px;
+        color: #333;
+    }
 
     .nav-links {
         position: fixed;
@@ -29,6 +40,7 @@
 
     .nav-links li {
         width: 100%;
+        
     }
 
     .nav-links a {
@@ -52,6 +64,7 @@
         transition: 0.4s;
         z-index: 1000;
         background: white;
+        margin-top: 100px;
     }
 
     .nav-actions.active {
@@ -63,6 +76,10 @@
         text-align: center;
     }
 
+    .avbar container {
+        padding-left: 20px;
+        padding-right: 20px;
+    }
 }
 
 
@@ -89,98 +106,153 @@
 }
 
 
-/* hero section */
+/* hero */
 
+/* ===================== */
+/* Large Laptop */
+/* ===================== */
 
+@media (max-width:1200px) {
 
-.hero {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 60px 0;
-    gap: 40px;
+    .hero-content h1 {
+        font-size: 38px;
+    }
+
+    .video-card1 {
+        width: 150px;
+        height: 290px;
+    }
+
 }
 
-.hero-content {
-    flex: 1;
+
+/* Tablet *
+/* ===================== */
+
+@media (max-width:992px) {
+
+    .hero {
+        gap: 40px;
+    }
+
+    .hero-content h1 {
+        font-size: 34px;
+    }
+
+    .hero-content p {
+        font-size: 15px;
+
+    }
+
+    .video-card1 {
+        width: 140px;
+        height: 260px;
+    }
+
 }
 
-h1 {
-    font-size: clamp(2rem, 5vw, 3.5rem);
-    line-height: 1.2;
-    margin-bottom: 20px;
-}
 
-h1 span {
-    color: #9b51e0;
-}
 
-.btn-start {
-    background: #9b51e0;
-    color: white;
-    border: none;
-    padding: 12px 30px;
-    border-radius: 25px;
-    font-weight: 600;
-    cursor: pointer;
-    transition: transform 0.2s ease;
-}
+/* Mobile */
 
-.btn-start:hover {
-    transform: translateY(-3px);
-    box-shadow: 0 5px 15px rgba(155, 81, 224, 0.4);
-}
 
-.hero-images {
-    display: flex;
-    gap: 20px;
-    flex: 1;
-    justify-content: flex-end;
-}
+@media (max-width:768px) {
 
-.video-card {
-    width: 100%;
-    max-width: 300px;
-    aspect-ratio: 3 / 4;
-    background: #2a001a;
-    border-radius: 20px;
-}
-
-@media (max-width: 992px) {
     .hero {
         flex-direction: column;
         text-align: center;
-        padding: 40px 0;
     }
 
-    .hero-content {
-        padding-right: 0;
-        margin-bottom: 50px;
+    .hero-content p {
+        margin: auto;
+    }
+
+    .hero-btns {
+        justify-content: center;
     }
 
     .hero-images {
         justify-content: center;
+    }
+
+    .hero-right {
+        margin-top: 30px;
+    }
+
+    .socailMedia {
         width: 100%;
     }
 
-    .video-card {
-        max-width: 250px;
+    .video-card1 {
+        width: 130px;
+        height: 240px;
     }
+
 }
 
-@media (max-width: 600px) {
-    .hero-images {
+
+
+/* Small Mobile */
+
+
+@media (max-width:480px) {
+
+    .hero {
+        padding: 50px 0;
+    }
+
+    .hero-content h1 {
+        font-size: 26px;
+    }
+
+    .hero-content p {
+        font-size: 14px;
+    }
+
+    .hero-btns {
         flex-direction: column;
         align-items: center;
     }
 
-    .video-card {
-        max-width: 100%;
-        height: 350px;
+    .btn-start,
+    .btn-demo {
+        width: 180px;
     }
 
-    h1 {
-        font-size: 2.2rem;
+    .video-card1 {
+        width: 110px;
+        height: 200px;
+    }
+
+    .play-icon {
+        width: 35px;
+        height: 35px;
+    }
+
+    .socailMedia h2 {
+        font-size: 14px;
+    }
+
+    .socailMedia ul li img {
+        width: 24px;
+    }
+
+}
+
+
+/* clinet reviews here */
+
+@media (max-width: 992px) {
+    .testi-slider {
+        display: flex;
+        overflow-x: auto;
+        scroll-snap-type: x mandatory;
+        gap: 15px;
+    }
+
+    .testi-card {
+        min-width: 280px;
+        scroll-snap-align: start;
     }
 }
 

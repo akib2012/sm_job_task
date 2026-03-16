@@ -111,65 +111,94 @@ header {
 
 /* hero section */
 
-/* --- Hero Layout --- */
+/* HERO SECTION */
 .hero {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 60px 0;
-    gap: 40px;
+    padding: 70px 0;
+    gap: 60px;
 }
 
+/* LEFT CONTENT */
 .hero-content {
     flex: 1;
 }
 
 .badge {
-    background-color: #f3f3f3;
-    padding: 10px 20px;
+    background: #f3f3f3;
+    padding: 8px 18px;
     border-radius: 30px;
     display: inline-block;
     margin-bottom: 20px;
-    font-size: 0.9rem;
+    font-size: 14px;
 }
 
-h1 {
-    font-size: 3.5rem;
-    line-height: 1.1;
+.hero-content h1 {
+    font-size: 46px;
+    line-height: 1.2;
     margin-bottom: 20px;
+    font-weight: 700;
 }
 
-h1 span {
+.hero-content h1 span {
     color: #9b51e0;
 }
 
+.hero-content p {
+    max-width: 420px;
+    color: #666;
+}
+
+/* BUTTONS */
 .hero-btns {
     display: flex;
     gap: 15px;
     margin-top: 30px;
 }
 
-/* --- Video Cards --- */
-.hero-images {
-    display: flex;
-    gap: 20px;
+.btn-start {
+    background: linear-gradient(90deg, #9b51e0, #6c5ce7);
+    color: white;
+    border: none;
+    padding: 12px 26px;
+    border-radius: 25px;
+    cursor: pointer;
 }
 
+.btn-demo {
+    background: transparent;
+    border: 2px solid #9b51e0;
+    padding: 12px 26px;
+    border-radius: 25px;
+    color: #9b51e0;
+    cursor: pointer;
+}
+
+/* RIGHT SIDE */
+.hero-right {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* VIDEO AREA */
+.hero-images {
+    display: flex;
+    gap: 25px;
+    margin-bottom: 30px;
+}
+
+/* VIDEO CARD */
 .video-card1 {
-    width: 260px;
-    /* Adjusted for better fit */
-    height: 380px;
-    background: #000;
+    width: 170px;
+    height: 320px;
     border-radius: 20px;
     overflow: hidden;
     position: relative;
-    cursor: pointer;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
-    transition: all 0.3s ease;
-}
-
-.video-card1:hover {
-    transform: translateY(-10px);
+    border: 8px solid #5c0016;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
 }
 
 .video-card1 video {
@@ -178,63 +207,46 @@ h1 span {
     object-fit: cover;
 }
 
-/* Play Icon Overlay */
+/* PLAY BUTTON */
 .play-icon {
     position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    background: rgba(155, 81, 224, 0.8);
-    color: white;
-    width: 50px;
-    height: 50px;
+    background: white;
+    width: 45px;
+    height: 45px;
     border-radius: 50%;
     display: flex;
     align-items: center;
     justify-content: center;
-    transition: 0.3s;
 }
 
-.video-card1.playing .play-icon {
-    opacity: 0;
-    visibility: hidden;
+/* SOCIAL BOX */
+.socailMedia {
+    background: #f4f4f4;
+    padding: 20px 30px;
+    border-radius: 12px;
+    text-align: center;
 }
 
-/* --- Responsive Design --- */
-@media (max-width: 992px) {
-    .hero {
-        flex-direction: column;
-        text-align: center;
-    }
-
-    .hero-btns {
-        justify-content: center;
-    }
-
-    .hero-images {
-        justify-content: center;
-    }
+.socailMedia h2 {
+    font-size: 16px;
+    margin-bottom: 15px;
+    font-weight: 500;
 }
 
-@media (max-width: 600px) {
-    h1 {
-        font-size: 2.2rem;
-    }
+.socailMedia ul {
+    display: flex;
+    gap: 18px;
+    justify-content: center;
+    list-style: none;
+    padding: 0;
+}
 
-    .hero-images {
-        flex-direction: column;
-        align-items: center;
-    }
-
-    .video-card1 {
-        width: 100%;
-        max-width: 300px;
-    }
-
-    .socailMedia ul {
-        flex-wrap: wrap;
-        justify-content: center;
-    }
+.socailMedia ul li img {
+    width: 28px;
+    height: 28px;
 }
 
 /* Social Media Card - Modern Upgrade */
@@ -359,22 +371,7 @@ h1 span {
     }
 }
 
-/* Tablet & Mobile Responsive */
-@media (max-width: 992px) {
-    .client-section {
-        flex-direction: column;
-        text-align: center;
-        padding: 30px 20px;
-    }
 
-    .client-info {
-        border-right: none;
-        border-bottom: 1px solid #ddd;
-        padding-right: 0;
-        padding-bottom: 20px;
-        width: 100%;
-    }
-}
 
 
 /* service of product here */
@@ -499,6 +496,76 @@ h1 span {
 .feature-title img {
     width: 50px;
     height: 50px;
+}
+
+
+
+/* client reviews here */
+
+
+.testimonials {
+    padding: 80px 0;
+}
+
+.testi-header {
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+.testi-header span {
+    color: #9b51e0;
+}
+
+.testi-slider {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 20px;
+}
+
+.testi-card {
+    position: relative;
+    border-radius: 20px;
+    overflow: hidden;
+    height: 400px;
+    cursor: pointer;
+}
+
+.testi-card video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.play-btn {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(5px);
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+}
+
+.user-info {
+    position: absolute;
+    bottom: 20px;
+    left: 20px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    color: white;
+}
+
+.user-info img {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
 }
 
 

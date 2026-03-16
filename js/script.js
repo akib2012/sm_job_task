@@ -4,30 +4,31 @@ const navActions = document.querySelector(".nav-actions");
 const overlay = document.querySelector(".menu-overlay");
 
 function toggleNav() {
-
   navLinks.classList.toggle("active");
   navActions.classList.toggle("active");
   overlay.classList.toggle("active");
 
   const icon = mobileMenu.querySelector("i");
 
-  if(icon.classList.contains("fa-bars")){
-      icon.classList.remove("fa-bars");
-      icon.classList.add("fa-times");
-  } else{
-      icon.classList.remove("fa-times");
-      icon.classList.add("fa-bars");
+  if (icon.classList.contains("fa-bars")) {
+    icon.classList.remove("fa-bars");
+    icon.classList.add("fa-times");
+  } else {
+    icon.classList.remove("fa-times");
+    icon.classList.add("fa-bars");
   }
-
 }
+
+mobileMenu.addEventListener("click", toggleNav);
+overlay.addEventListener("click", toggleNav);
 
 mobileMenu.addEventListener("click", toggleNav);
 overlay.addEventListener("click", toggleNav);
 
 /* close menu when click link */
 
-document.querySelectorAll(".nav-links a").forEach(link => {
-    link.addEventListener("click", toggleNav);
+document.querySelectorAll(".nav-links a").forEach((link) => {
+  link.addEventListener("click", toggleNav);
 });
 
 // for the video paly and contronl
@@ -37,26 +38,34 @@ const videoCards = document.querySelectorAll(".video-card1");
 
 videoCards.forEach((card) => {
   const video = card.querySelector("video");
+  const icon = card.querySelector(".play-icon i");
 
-  if (video) {
-    card.addEventListener("click", () => {
-      if (video.paused) {
-        // Pause all other videos before playing this one (Modern UX)
-        videoCards.forEach((c) => {
-          c.querySelector("video").pause();
-          c.classList.remove("playing");
-        });
+  card.addEventListener("click", () => {
+    if (video.paused) {
+      // pause all videos
+      videoCards.forEach((c) => {
+        const v = c.querySelector("video");
+        const i = c.querySelector(".play-icon i");
 
-        video.play();
-        card.classList.add("playing");
-      } else {
-        video.pause();
-        card.classList.remove("playing");
-      }
-    });
+        v.pause();
+        i.classList.remove("fa-pause");
+        i.classList.add("fa-play");
+        c.classList.remove("playing");
+      });
 
-    video.loop = true;
-  }
+      video.play();
+      icon.classList.remove("fa-play");
+      icon.classList.add("fa-pause");
+      card.classList.add("playing");
+    } else {
+      video.pause();
+      icon.classList.remove("fa-pause");
+      icon.classList.add("fa-play");
+      card.classList.remove("playing");
+    }
+  });
+
+  video.loop = true;
 });
 
 // dynamin client section
@@ -115,6 +124,23 @@ function togglePlay(card) {
     console.log("Video Playing");
   }
 }
+
+// client reviews here
+
+document.querySelectorAll(".testi-card").forEach((card) => {
+  const video = card.querySelector("video");
+  const playBtn = card.querySelector(".play-btn");
+
+  card.addEventListener("click", () => {
+    if (video.paused) {
+      video.play();
+      playBtn.style.display = "none";
+    } else {
+      video.pause();
+      playBtn.style.display = "flex";
+    }
+  });
+});
 
 // frequently ask question
 
