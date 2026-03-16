@@ -219,22 +219,24 @@
 
 /* REVIEWS */
 
-@media (min-width: 768px) {
+/* Mobile responsive fallback */
+@media (max-width: 768px) {
     .reviews-grid {
-        grid-template-columns: repeat(2, 1fr);
-    }
-}
-
-@media (min-width: 1024px) {
-    .reviews-grid {
-        grid-template-columns: repeat(3, 1fr);
+        grid-template-columns: 1fr;
     }
 
-    .review-card:nth-child(1),
-    .review-card:nth-child(2) {
-        grid-column: span 1;
+    .reviews-grid .review-card {
+        grid-column: span 1 !important;
     }
+
+
 }
+
+.review-card:hover {
+    transform: translateY(-6px);
+}
+
+
 
 
 /*  SOCIAL MEDIA  */
@@ -535,11 +537,17 @@
 
     .video-services {
         padding: 80px 0;
+        margin-top: -80px;
+        margin-bottom: -20px;
     }
 
 }
 
 @media (max-width:768px) {
+    .video-services {
+        margin-top: -80px;
+        margin-bottom: -20px;
+    }
 
     .features-grid {
         grid-template-columns: 1fr;
@@ -591,6 +599,9 @@
     }
 
 }
+
+
+
 
 
 /* PERSONAL BRANDING */
@@ -692,12 +703,27 @@
 }
 
 
+/* testimonial  */
+
+
+@media (max-width: 600px) {
+    .testi-header {
+        font-size: 1.2rem;
+    }
+
+}
+
+
 /*  FAQ  */
 
 @media (max-width: 600px) {
 
     .faq-container {
         padding: 10px;
+    }
+
+    .faq-container h2 {
+        font-size: 1.5rem;
     }
 
 }

@@ -173,10 +173,11 @@ function createReviewCard(review) {
   card.classList.add("review-card");
 
   card.innerHTML = `
+   
     <div class="review-top">
 
       <div class="review-user">
-        <img src="./assets/images/logo.jpg" alt="User">
+        <img src="./assets/images/poster/mmmman.webp" alt="User">
 
         <div class="review-user-info">
           <h4>${review.name}</h4>
@@ -195,6 +196,7 @@ function createReviewCard(review) {
       <p>${review.description}</p>
       <span class="quote-end">”</span>
     </div>
+
   `;
 
   return card;
