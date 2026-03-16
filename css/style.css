@@ -114,7 +114,7 @@ header {
 }
 
 
-/* hero section */
+
 
 /* HERO SECTION */
 .hero {
@@ -924,8 +924,6 @@ header {
 
 /* personal branding add here */
 
-
-
 .personal-brands {
 
     font-family: sans-serif;
@@ -1022,10 +1020,6 @@ header {
 
 /*  Popularity Section   */
 
-
-
-
-
 .popularity {
     display: flex;
     align-items: center;
@@ -1086,7 +1080,6 @@ header {
 .pop-text .btn-start:hover {
     background: #7a2dc0;
 }
-
 
 
 
