@@ -374,21 +374,41 @@ header {
 
 
 
-/* service of product here */
+/* ============================= */
+/* SERVICES SECTION */
+/* ============================= */
 
 .services-section {
-    padding: 80px 0;
+    padding: 50px 0;
     text-align: center;
 }
 
+/* HEADER */
+
+.services-header {
+    max-width: 700px;
+    margin: auto;
+    margin-bottom: 50px;
+}
+
 .services-header h2 {
-    font-size: 2.5rem;
+    font-size: clamp(28px, 4vw, 42px);
     margin-bottom: 15px;
+    font-weight: 700;
 }
 
 .services-header span {
     color: #9b51e0;
 }
+
+.services-header p {
+    color: #666;
+    font-size: 16px;
+    line-height: 1.6;
+}
+
+
+/* SERVICES CARD */
 
 .services-card {
     display: flex;
@@ -398,8 +418,9 @@ header {
     padding: 40px;
     text-align: left;
     gap: 50px;
-    margin-top: 40px;
 }
+
+/* LEFT SIDE */
 
 .services-left {
     flex: 1;
@@ -407,8 +428,26 @@ header {
     padding-right: 40px;
 }
 
+.feature-title {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    margin-bottom: 25px;
+}
+
+.feature-title img {
+    width: 45px;
+    height: 45px;
+}
+
+.feature-title h3 {
+    font-size: 20px;
+}
+
 .feature-item {
     display: flex;
+    justify-items: center;
+    align-items: center;
     gap: 15px;
     margin-bottom: 25px;
 }
@@ -418,6 +457,19 @@ header {
     margin-top: 5px;
 }
 
+.feature-item h4 {
+    font-size: 17px;
+    margin-bottom: 5px;
+}
+
+.feature-item p {
+    font-size: 14px;
+    color: #666;
+    line-height: 1.5;
+}
+
+/* RIGHT SIDE */
+
 .services-right {
     flex: 1.2;
     display: flex;
@@ -425,35 +477,50 @@ header {
     gap: 20px;
 }
 
-/* Package Card Styles */
+
+/* ============================= */
+/* PACKAGE CARD */
+/* ============================= */
+
 .package-option {
     border: 1px solid #e0e0e0;
-    padding: 20px;
-    border-radius: 15px;
+    padding: 22px;
+    border-radius: 16px;
     display: flex;
     justify-content: space-between;
     align-items: center;
     cursor: pointer;
     position: relative;
-    transition: 0.3s;
+    transition: all 0.35s ease;
+    background: white;
+}
+
+.package-option:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+    border-color: #9b51e0;
 }
 
 .package-option.selected {
     border-color: #9b51e0;
-    background: #fdf8ff;
+    background: #faf5ff;
+    box-shadow: 0 8px 25px rgba(155, 81, 224, 0.15);
 }
 
-.badge {
 
+/* PACKAGE TEXT */
 
-    background: white;
-    /* color: white; */
-    font-size: 20px;
-    padding: 10px;
-    border-radius: 5px;
-
-
+.package-name {
+    font-weight: 600;
+    font-size: 16px;
 }
+
+.package-desc {
+    font-size: 14px;
+    color: #666;
+}
+
+/* RADIO BUTTON */
 
 .custom-radio {
     width: 20px;
@@ -461,41 +528,62 @@ header {
     border: 2px solid #ddd;
     border-radius: 50%;
     position: relative;
+    transition: 0.3s;
 }
 
 .package-option.selected .custom-radio {
     border-color: #9b51e0;
     background: #9b51e0;
+    transform: scale(1.1);
 }
 
 .package-option.selected .custom-radio::after {
-    content: '✔';
-    color: white;
-    font-size: 12px;
+    content: "";
+    width: 8px;
+    height: 8px;
+    background: white;
+    border-radius: 50%;
     position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
 }
 
-.btn-get-started {
-    background: linear-gradient(to right, #9b51e0, #7b3fd3);
+
+/* BADGE */
+
+.badge {
+    top: -10px;
+    right: 15px;
+    background: #9b51e0;
     color: white;
-    padding: 15px 40px;
-    border-radius: 30px;
+    font-size: 12px;
+    padding: 5px 12px;
+    border-radius: 20px;
+    font-weight: 600;
+}
+
+
+/* BUTTON */
+
+.center-btn {
+    margin-top: 40px;
+}
+
+.btn-get-started {
+    background: linear-gradient(90deg, #9b51e0, #7b3fd3);
+    color: white;
+    padding: 16px 45px;
+    border-radius: 40px;
     border: none;
-    margin-top: 30px;
     cursor: pointer;
+    font-size: 15px;
+    transition: 0.3s;
 }
 
-.feature-title {
-    display: flex;
-    gap: 5px;
-}
-
-.feature-title img {
-    width: 50px;
-    height: 50px;
+.btn-get-started:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 25px rgba(155, 81, 224, 0.35);
 }
 
 
@@ -571,30 +659,35 @@ header {
 
 
 
-/*  .............*/
+/* VIDEO SERVICES SECTION */
 
-
-video-services {
-    padding: 80px 20px;
+.video-services {
+    padding: 10px 0;
 }
+
+/* HEADER */
 
 .header-text {
     text-align: center;
-    margin-bottom: 60px;
+    margin-bottom: 70px;
 }
 
 .header-text h2 {
-    font-size: 3rem;
+    font-size: clamp(28px, 4vw, 48px);
+    font-weight: 700;
+    line-height: 1.2;
 }
 
 .header-text span {
     color: #9b51e0;
 }
 
-/* Grid for top 3 cards */
+
+/* TOP FEATURE GRID */
+
 .features-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    grid-template-columns: repeat(3, 1fr);
     gap: 30px;
     margin-bottom: 50px;
 }
@@ -603,7 +696,23 @@ video-services {
     background: #fff;
     padding: 30px;
     border-radius: 20px;
-    border: 1px solid #f0f0f0;
+    border: 1px solid #eee;
+    transition: 0.35s;
+}
+
+.feature-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.08);
+}
+
+.feature-card i {
+    color: #28a745;
+    font-size: 20px;
+}
+
+.feature-card h3 {
+    font-size: 20px;
+    margin: 15px 0;
 }
 
 .feature-card img {
@@ -612,32 +721,57 @@ video-services {
     border-radius: 12px;
 }
 
-/* Grid for bottom 6 cards */
+.feature-card p {
+    font-size: 14px;
+    color: #666;
+    line-height: 1.6;
+}
+
+
+/* SERVICES GRID */
+
+
 .services-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    grid-template-columns: repeat(3, 1fr);
     gap: 20px;
 }
 
 .service-card {
-
-    padding: 30px;
+    padding: 28px;
     border-radius: 15px;
     border: 2px solid #eee;
+    transition: 0.3s;
 }
 
+.service-card:hover {
+    border-color: #9b51e0;
+    transform: translateY(-4px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.06);
+}
+
+.service-card h3 {
+    font-size: 18px;
+    margin-bottom: 8px;
+}
+
+.service-card p {
+    font-size: 14px;
+    color: #666;
+}
 
 
 
 /* personal branding add here */
 
 .personal-brands {
-    padding: 60px 5%;
+
     font-family: sans-serif;
+
 }
 
 .header h2 {
-    font-size: 2.5rem;
+    font-size: 2rem;
     margin-bottom: 30px;
 }
 
@@ -653,10 +787,10 @@ video-services {
 
 .carousel-track {
     display: flex;
-    gap: 25px;
+    gap: 20px;
     overflow-x: auto;
     scroll-behavior: smooth;
-    padding: 20px 0;
+    padding: 10px 0;
     scrollbar-width: none;
 }
 
@@ -665,37 +799,39 @@ video-services {
 }
 
 .video-card {
-    min-width: 280px;
+    min-width: 250px;
+    flex: 0 0 auto;
     position: relative;
     cursor: pointer;
     text-align: center;
     display: flex;
     flex-direction: column;
-    gap: 15px;
+    gap: 10px;
 }
 
 .video-card video {
     width: 100%;
-    height: 350px;
-    border-radius: 20px;
+    height: 200px;
+    border-radius: 15px;
     object-fit: cover;
     display: block;
-    background: #000;
+    transition: transform 0.3s;
+}
+
+.video-card.playing video {
+    transform: scale(1.05);
 }
 
 .video-card p {
-    font-size: 1.2rem;
+    font-size: 1rem;
     font-weight: 600;
-    color: white;
     margin: 0;
-    display: block;
-    visibility: visible;
-    padding-bottom: 20px;
+    padding-bottom: 10px;
 }
 
 .play-icon {
     position: absolute;
-    top: 175px;
+    top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
     background: rgba(0, 0, 0, 0.5);
@@ -714,41 +850,83 @@ video-services {
     right: -10px;
     background: #fff;
     border: 1px solid #ddd;
-    padding: 15px 20px;
+    padding: 12px 16px;
     border-radius: 50%;
     cursor: pointer;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     z-index: 10;
 }
 
+/* Responsive Design */
+
+
 
 /* why short video is so populer */
 
 
+/* ===== Popularity Section ===== */
 .popularity {
     display: flex;
     align-items: center;
+    justify-content: center;
     gap: 50px;
-    padding: 50px;
+    padding: 50px 20px;
+    max-width: 1100px;
+    /* content width */
+    margin: 0 auto;
+    flex-wrap: wrap;
+    /* allows stacking on smaller screens */
+    box-sizing: border-box;
 }
 
-.pop-image {
-    flex: 1;
+.pop-image,
+.pop-text {
+    flex: 1 1 400px;
+    /* flexible width with min 400px */
 }
 
 .pop-image img {
     width: 100%;
     border-radius: 20px;
+    display: block;
 }
 
-.pop-text {
-    flex: 1;
-}
-
-h2 {
+/* Headline & paragraph */
+.pop-text h2 {
     font-size: 2.5rem;
     margin-bottom: 20px;
+    color: #111;
+    text-align: left;
 }
+
+.pop-text p {
+    font-size: 1rem;
+    line-height: 1.6;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+/* Button styling */
+.pop-text .btn-start {
+    display: inline-block;
+    margin: 0;
+    /* will center with auto on mobile */
+    padding: 12px 30px;
+    background: #9b51e0;
+    color: #fff;
+    font-size: 1rem;
+    font-weight: 600;
+    border: none;
+    border-radius: 30px;
+    cursor: pointer;
+    text-align: center;
+    transition: background 0.3s ease;
+}
+
+.pop-text .btn-start:hover {
+    background: #7a2dc0;
+}
+
 
 
 

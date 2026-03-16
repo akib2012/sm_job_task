@@ -40,7 +40,7 @@
 
     .nav-links li {
         width: 100%;
-        
+
     }
 
     .nav-links a {
@@ -265,7 +265,6 @@
 @media (max-width: 992px) {
     .socailMedia {
         margin: 30px auto;
-        /* Centers the pill on tablet/mobile */
         display: block;
         max-width: max-content;
     }
@@ -275,7 +274,6 @@
     .socailMedia {
         padding: 10px 18px;
         border-radius: 20px;
-        /* Slightly less rounded for better screen fit */
     }
 
     .socailMedia ul {
@@ -291,12 +289,195 @@
 
 
 
-/* service of the pakages */
+
+/* clinents and fetures */
+
+/* CLIENT SECTION */
+
+.client-section {
+    display: flex;
+    align-items: center;
+    background: #f9f9f9;
+    padding: 40px;
+    border-radius: 20px;
+    gap: 40px;
+    overflow: hidden;
+}
+
+/* LEFT INFO */
+
+.client-info {
+    min-width: 180px;
+    border-right: 1px solid #ddd;
+    padding-right: 20px;
+}
+
+.client-info h3 {
+    font-size: 1.8rem;
+    font-weight: 800;
+    color: #111;
+}
+
+.client-info p {
+    font-size: 0.9rem;
+    color: #666;
+}
+
+/* LOGO SLIDER */
+
+.logo-slider {
+    flex: 1;
+    overflow: hidden;
+    position: relative;
+    mask-image: linear-gradient(to right, transparent, black 15%, black 85%, transparent);
+}
+
+.logo-track {
+    display: flex;
+    align-items: center;
+    gap: 60px;
+    width: max-content;
+    animation: scroll 30s linear infinite;
+}
+
+.logo-item {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-weight: 700;
+    font-size: 1.1rem;
+    color: #111;
+    white-space: nowrap;
+}
+
+.logo-item img {
+    height: 30px;
+    filter: grayscale(100%);
+    opacity: 0.7;
+}
+
+/* INFINITE SCROLL */
+
+@keyframes scroll {
+    0% {
+        transform: translateX(0);
+    }
+
+    100% {
+        transform: translateX(-50%);
+    }
+}
+
+
+
+
+/* TABLET RESPONSIVE */
 
 @media (max-width: 992px) {
+
+    .client-section {
+        padding: 30px;
+        gap: 30px;
+    }
+
+    .client-info h3 {
+        font-size: 1.6rem;
+    }
+
+    .logo-track {
+        gap: 40px;
+    }
+
+    .logo-item {
+        font-size: 1rem;
+    }
+
+    .logo-item img {
+        height: 26px;
+    }
+
+}
+
+
+/* MOBILE RESPONSIVE */
+
+@media (max-width:768px) {
+
+    .client-section {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 20px;
+    }
+
+    .client-info {
+        border-right: none;
+        border-bottom: 1px solid #ddd;
+        padding-right: 0;
+        padding-bottom: 15px;
+        width: 100%;
+    }
+
+    .logo-slider {
+        width: 100%;
+    }
+
+    .logo-track {
+        gap: 30px;
+    }
+
+    .logo-item {
+        font-size: 0.95rem;
+    }
+
+    .logo-item img {
+        height: 24px;
+    }
+
+}
+
+
+/* SMALL MOBILE */
+
+@media (max-width:480px) {
+
+    .client-section {
+        padding: 20px;
+    }
+
+    .client-info h3 {
+        font-size: 1.4rem;
+    }
+
+    .client-info p {
+        font-size: 0.85rem;
+    }
+
+    .logo-track {
+        gap: 25px;
+    }
+
+    .logo-item {
+        font-size: 0.85rem;
+    }
+
+    .logo-item img {
+        height: 22px;
+    }
+
+}
+
+
+
+/* ============================= */
+/* TABLET */
+/* ============================= */
+
+@media (max-width: 992px) {
+
     .services-card {
         flex-direction: column;
-        padding: 20px;
+        padding: 30px;
+        gap: 30px;
     }
 
     .services-left {
@@ -305,50 +486,276 @@
         padding-right: 0;
         padding-bottom: 30px;
     }
+
 }
+
+
+/* ============================= */
+/* MOBILE */
+/* ============================= */
+
+@media (max-width:768px) {
+
+    .services-section {
+        padding: 70px 0;
+    }
+
+    .services-header h2 {
+        font-size: 26px;
+    }
+
+    .services-header p {
+        font-size: 14px;
+    }
+
+    .services-card {
+        padding: 20px;
+    }
+
+    .package-option {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 10px;
+    }
+
+    .custom-radio {
+        position: absolute;
+        right: 15px;
+        top: 50%;
+        transform: translateY(-50%);
+    }
+
+    .btn-get-started {
+        width: 100%;
+    }
+
+}
+
+
+/* ============================= */
+/* SMALL MOBILE */
+/* ============================= */
+
+@media (max-width:480px) {
+
+    .services-header h2 {
+        font-size: 22px;
+    }
+
+    .feature-title img {
+        width: 35px;
+        height: 35px;
+    }
+
+    .feature-item h4 {
+        font-size: 15px;
+    }
+
+    .feature-item p {
+        font-size: 13px;
+    }
+
+    .package-name {
+        font-size: 14px;
+    }
+
+    .package-desc {
+        font-size: 12px;
+    }
+
+    .services-card {
+        padding: 15px;
+    }
+
+}
+
 
 
 
 /* .............. */
 
-/* Responsive adjustment */
-@media (max-width: 768px) {
-    .header-text h2 {
-        font-size: 2rem;
+/* ============================= */
+/* TABLET */
+/* ============================= */
+
+@media (max-width:992px) {
+
+    .features-grid {
+        grid-template-columns: repeat(2, 1fr);
     }
 
-    .features-grid,
     .services-grid {
-        gap: 15px;
+        grid-template-columns: repeat(2, 1fr);
     }
+
+    .header-text h2 {
+        font-size: 32px;
+    }
+
+    .video-services {
+        padding: 80px 0;
+    }
+
 }
+
+
+/* ============================= */
+/* MOBILE */
+/* ============================= */
+
+@media (max-width:768px) {
+
+    .features-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .services-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .header-text {
+        margin-bottom: 50px;
+    }
+
+    .header-text h2 {
+        font-size: 26px;
+    }
+
+    .feature-card {
+        padding: 25px;
+    }
+
+    .service-card {
+        padding: 22px;
+    }
+
+}
+
+
+/* ============================= */
+/* SMALL MOBILE */
+/* ============================= */
+
+@media (max-width:480px) {
+
+    .video-services {
+        padding: 60px 0;
+    }
+
+    .header-text h2 {
+        font-size: 22px;
+    }
+
+    .feature-card h3 {
+        font-size: 17px;
+    }
+
+    .service-card h3 {
+        font-size: 16px;
+    }
+
+    .feature-card p,
+    .service-card p {
+        font-size: 13px;
+    }
+
+}
+
 
 
 
 
 /* for personal branding */
 
-/* Responsive */
-@media (max-width: 600px) {
-    .video-card {
-        min-width: 200px;
+@media (max-width: 1024px) {
+    .video-card video {
+        height: 180px;
     }
 }
-
-
-
-/* why short video is so populer */
-
 
 @media (max-width: 768px) {
+    .header h2 {
+        font-size: 1.8rem;
+    }
 
-    .hero,
-    .popularity {
-        flex-direction: column;
-        text-align: center;
+    .video-card video {
+        height: 160px;
     }
 }
 
+@media (max-width: 480px) {
+    .video-card {
+        min-width: 180px;
+    }
+
+    .video-card video {
+        height: 140px;
+    }
+}
+
+
+
+/* ===== Responsive for short video why famouse ===== */
+
+/* Tablets */
+@media (max-width: 1024px) {
+    .pop-text h2 {
+        font-size: 2rem;
+    }
+
+    .popularity {
+        gap: 30px;
+        padding: 40px 20px;
+    }
+}
+
+/* Small tablets / large phones */
+@media (max-width: 768px) {
+    .popularity {
+        flex-direction: column;
+        /* stack image & text vertically */
+        gap: 30px;
+        padding: 30px 15px;
+    }
+
+    .pop-text h2 {
+        font-size: 1.8rem;
+        text-align: center;
+    }
+
+    .pop-text p {
+        text-align: center;
+    }
+
+    .pop-text .btn-start {
+        display: block;
+        margin: 0 auto;
+        /* center button */
+        font-size: 0.95rem;
+        padding: 12px 25px;
+    }
+}
+
+/* Mobile phones */
+@media (max-width: 480px) {
+    .popularity {
+        padding: 20px 10px;
+        gap: 20px;
+    }
+
+    .pop-text h2 {
+        font-size: 1.5rem;
+    }
+
+    .pop-text p {
+        font-size: 0.95rem;
+    }
+
+    .pop-text .btn-start {
+        font-size: 0.9rem;
+        padding: 10px 20px;
+    }
+}
 
 
 /* frequently ask question */

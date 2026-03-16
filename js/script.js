@@ -101,48 +101,74 @@ function selectPackage(element) {
   element.querySelector('input[type="radio"]').checked = true;
 }
 
-// Horizontal scroll function
-function scrollCarousel() {
-  const track = document.getElementById("carouselTrack");
-  track.scrollBy({ left: 300, behavior: "smooth" });
-}
-
-// Play/Stop toggle logic
+// Toggle play/pause for videos
 function togglePlay(card) {
+  const video = card.querySelector("video");
   const icon = card.querySelector(".play-icon");
 
-  // Toggle state
-  if (card.classList.contains("playing")) {
-    card.classList.remove("playing");
-    icon.innerText = "▶";
-    // Insert logic here to pause your video element
-    console.log("Video Paused");
-  } else {
+  // Pause all other videos first
+  document.querySelectorAll(".video-card").forEach((otherCard) => {
+    if (otherCard !== card) {
+      const otherVideo = otherCard.querySelector("video");
+      const otherIcon = otherCard.querySelector(".play-icon");
+      otherVideo.pause();
+      otherCard.classList.remove("playing");
+      otherIcon.innerText = "▶";
+    }
+  });
+
+  // Toggle this video
+  if (video.paused) {
+    video.play();
     card.classList.add("playing");
     icon.innerText = "⏸";
-    // Insert logic here to play your video element
-    console.log("Video Playing");
+  } else {
+    video.pause();
+    card.classList.remove("playing");
+    icon.innerText = "▶";
   }
 }
 
-// client reviews here
+// Scroll carousel for the specific section
+function scrollCarousel(button) {
+  // Find the carousel track in the same wrapper as this button
+  const wrapper = button.closest(".carousel-wrapper");
+  const track = wrapper.querySelector(".carousel-track");
 
-document.querySelectorAll(".testi-card").forEach((card) => {
+  const card = track.querySelector(".video-card"); // first card
+  const gap = parseInt(getComputedStyle(track).gap) || 20; // get CSS gap
+  const scrollAmount = card.offsetWidth + gap;
+
+  track.scrollBy({ left: scrollAmount, behavior: "smooth" });
+}
+
+// Video play/pause toggle
+function togglePlay(card) {
   const video = card.querySelector("video");
-  const playBtn = card.querySelector(".play-btn");
+  const icon = card.querySelector(".play-icon");
 
-  card.addEventListener("click", () => {
-    if (video.paused) {
-      video.play();
-      playBtn.style.display = "none";
-    } else {
-      video.pause();
-      playBtn.style.display = "flex";
+  // Pause all other videos
+  document.querySelectorAll(".video-card").forEach((otherCard) => {
+    if (otherCard !== card) {
+      const otherVideo = otherCard.querySelector("video");
+      const otherIcon = otherCard.querySelector(".play-icon");
+      otherVideo.pause();
+      otherCard.classList.remove("playing");
+      otherIcon.innerText = "▶";
     }
   });
-});
 
-// frequently ask question
+  // Toggle this video
+  if (video.paused) {
+    video.play();
+    card.classList.add("playing");
+    icon.innerText = "⏸";
+  } else {
+    video.pause();
+    card.classList.remove("playing");
+    icon.innerText = "▶";
+  }
+}
 
 function toggleFAQ(element) {
   const item = element.parentElement;

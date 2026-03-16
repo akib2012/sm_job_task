@@ -169,7 +169,7 @@
                     <div class="package-option" onclick="selectPackage(this)">
                         <input type="radio" name="package" id="p1">
                         <div class="package-info">
-                            <p class="package-name">5 Short form video - $99/ 1 week</p>
+                            <p class="package-name">5 Short form video - $99</p>
                             <p class="package-desc">Tailored graphic and video content packages.</p>
                         </div>
                         <div class="custom-radio"></div>
@@ -179,8 +179,8 @@
                         <span class="badge">Most popular</span>
                         <input type="radio" name="package" id="p2" checked>
                         <div class="package-info">
-                            <p class="package-name">10 Short form video - $99/ 1 week</p>
-                            <p class="package-desc">Tailored graphic and video content packages.</p>
+                            <p class="package-name">10 Short form video - $99</p>
+                            <p class="package-desc">Tailored graphic and video </p>
                         </div>
                         <div class="custom-radio"></div>
                     </div>
@@ -188,7 +188,7 @@
                     <div class="package-option" onclick="selectPackage(this)">
                         <input type="radio" name="package" id="p3">
                         <div class="package-info">
-                            <p class="package-name">5 Short form video - $99/ 1 week</p>
+                            <p class="package-name">5 Short form video - $99</p>
                             <p class="package-desc">Tailored graphic and video content packages.</p>
                         </div>
                         <div class="custom-radio"></div>
@@ -262,16 +262,14 @@
             </div>
         </section>
 
-        <!-- video for business add here -->
-
-
+        <!-- Videos for Personal Brands -->
         <section class="personal-brands">
             <div class="header">
                 <h2>Videos <span>For personal brands</span></h2>
             </div>
 
             <div class="carousel-wrapper">
-                <div class="carousel-track" id="carouselTrack">
+                <div class="carousel-track">
                     <div class="video-card" onclick="togglePlay(this)">
                         <video src="./assets/videos/demo_video.mp4" playsinline></video>
                         <div class="play-icon">▶</div>
@@ -292,20 +290,24 @@
                         <div class="play-icon">▶</div>
                         <p>Home services</p>
                     </div>
+                    <div class="video-card" onclick="togglePlay(this)">
+                        <video src="./assets/videos/demo_video.mp4" playsinline></video>
+                        <div class="play-icon">▶</div>
+                        <p>Home services</p>
+                    </div>
                 </div>
-                <button class="next-btn" onclick="scrollCarousel()">❯</button>
+                <button class="next-btn" onclick="scrollCarousel(this)">❯</button>
             </div>
         </section>
 
-        <!-- vidoes for the personal branding -->
-
+        <!-- Videos for Business -->
         <section class="personal-brands">
             <div class="header">
                 <h2>Videos <span>For Business</span></h2>
             </div>
 
             <div class="carousel-wrapper">
-                <div class="carousel-track" id="carouselTrack">
+                <div class="carousel-track">
                     <div class="video-card" onclick="togglePlay(this)">
                         <video src="./assets/videos/demo_video.mp4" playsinline></video>
                         <div class="play-icon">▶</div>
@@ -326,8 +328,23 @@
                         <div class="play-icon">▶</div>
                         <p>Home services</p>
                     </div>
+                    <div class="video-card" onclick="togglePlay(this)">
+                        <video src="./assets/videos/demo_video02.mp4" playsinline></video>
+                        <div class="play-icon">▶</div>
+                        <p>Financial services</p>
+                    </div>
+                    <div class="video-card" onclick="togglePlay(this)">
+                        <video src="./assets/videos/demo_video_03.mp4" playsinline></video>
+                        <div class="play-icon">▶</div>
+                        <p>Real estate</p>
+                    </div>
+                    <div class="video-card" onclick="togglePlay(this)">
+                        <video src="./assets/videos/demo_video.mp4" playsinline></video>
+                        <div class="play-icon">▶</div>
+                        <p>Home services</p>
+                    </div>
                 </div>
-                <button class="next-btn" onclick="scrollCarousel()">❯</button>
+                <button class="next-btn" onclick="scrollCarousel(this)">❯</button>
             </div>
         </section>
 
