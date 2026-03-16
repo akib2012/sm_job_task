@@ -1,3 +1,5 @@
+/*  NAVBAR  */
+
 @media (max-width: 992px) {
 
     .mobile-menu {
@@ -10,7 +12,6 @@
         padding-right: 20px;
     }
 
-    /* sidebar */
     .mobile-menu-title {
         font-size: 20px;
         font-weight: 600;
@@ -40,7 +41,6 @@
 
     .nav-links li {
         width: 100%;
-
     }
 
     .nav-links a {
@@ -49,8 +49,6 @@
         padding: 10px 0;
         border-bottom: 1px solid #eee;
     }
-
-    /* buttons inside sidebar */
 
     .nav-actions {
         position: fixed;
@@ -76,16 +74,14 @@
         text-align: center;
     }
 
-    .avbar container {
+    .navbar.container {
         padding-left: 20px;
         padding-right: 20px;
     }
 }
 
 
-/* ============================= */
-/* overlay */
-/* ============================= */
+/* OVERLAY */
 
 .menu-overlay {
     position: fixed;
@@ -106,11 +102,7 @@
 }
 
 
-/* hero */
-
-/* ===================== */
-/* Large Laptop */
-/* ===================== */
+/* HERO */
 
 @media (max-width:1200px) {
 
@@ -125,10 +117,6 @@
 
 }
 
-
-/* Tablet *
-/* ===================== */
-
 @media (max-width:992px) {
 
     .hero {
@@ -141,7 +129,6 @@
 
     .hero-content p {
         font-size: 15px;
-
     }
 
     .video-card1 {
@@ -150,11 +137,6 @@
     }
 
 }
-
-
-
-/* Mobile */
-
 
 @media (max-width:768px) {
 
@@ -189,11 +171,6 @@
     }
 
 }
-
-
-
-/* Small Mobile */
-
 
 @media (max-width:480px) {
 
@@ -240,7 +217,7 @@
 }
 
 
-/* clinet reviews here */
+/* REVIEWS */
 
 @media (min-width: 768px) {
     .reviews-grid {
@@ -248,26 +225,20 @@
     }
 }
 
-
 @media (min-width: 1024px) {
     .reviews-grid {
         grid-template-columns: repeat(3, 1fr);
     }
 
-    
     .review-card:nth-child(1),
     .review-card:nth-child(2) {
         grid-column: span 1;
-        
     }
 }
 
 
+/*  SOCIAL MEDIA  */
 
-/* social media card */
-
-
-/* Responsive - Tablet & Mobile */
 @media (max-width: 992px) {
     .socailMedia {
         margin: 30px auto;
@@ -277,6 +248,7 @@
 }
 
 @media (max-width: 480px) {
+
     .socailMedia {
         padding: 10px 18px;
         border-radius: 20px;
@@ -291,14 +263,11 @@
         height: 38px;
         padding: 6px;
     }
+
 }
 
 
-
-
-/* clinents and fetures */
-
-/* CLIENT SECTION */
+/*  CLIENT SECTION  */
 
 .client-section {
     display: flex;
@@ -309,8 +278,6 @@
     gap: 40px;
     overflow: hidden;
 }
-
-/* LEFT INFO */
 
 .client-info {
     min-width: 180px;
@@ -328,8 +295,6 @@
     font-size: 0.9rem;
     color: #666;
 }
-
-/* LOGO SLIDER */
 
 .logo-slider {
     flex: 1;
@@ -362,9 +327,8 @@
     opacity: 0.7;
 }
 
-/* INFINITE SCROLL */
-
 @keyframes scroll {
+
     0% {
         transform: translateX(0);
     }
@@ -372,12 +336,8 @@
     100% {
         transform: translateX(-50%);
     }
+
 }
-
-
-
-
-/* TABLET RESPONSIVE */
 
 @media (max-width: 992px) {
 
@@ -403,9 +363,6 @@
     }
 
 }
-
-
-/* MOBILE RESPONSIVE */
 
 @media (max-width:768px) {
 
@@ -441,9 +398,6 @@
 
 }
 
-
-/* SMALL MOBILE */
-
 @media (max-width:480px) {
 
     .client-section {
@@ -473,10 +427,7 @@
 }
 
 
-
-/* ============================= */
-/* TABLET */
-/* ============================= */
+/*  SERVICES  */
 
 @media (max-width: 992px) {
 
@@ -494,11 +445,6 @@
     }
 
 }
-
-
-/* ============================= */
-/* MOBILE */
-/* ============================= */
 
 @media (max-width:768px) {
 
@@ -537,11 +483,6 @@
 
 }
 
-
-/* ============================= */
-/* SMALL MOBILE */
-/* ============================= */
-
 @media (max-width:480px) {
 
     .services-header h2 {
@@ -576,13 +517,7 @@
 }
 
 
-
-
-/* .............. */
-
-/* ============================= */
-/* TABLET */
-/* ============================= */
+/*  VIDEO SERVICES  */
 
 @media (max-width:992px) {
 
@@ -603,11 +538,6 @@
     }
 
 }
-
-
-/* ============================= */
-/* MOBILE */
-/* ============================= */
 
 @media (max-width:768px) {
 
@@ -637,11 +567,6 @@
 
 }
 
-
-/* ============================= */
-/* SMALL MOBILE */
-/* ============================= */
-
 @media (max-width:480px) {
 
     .video-services {
@@ -668,18 +593,18 @@
 }
 
 
-
-
-
-/* for personal branding */
+/* PERSONAL BRANDING */
 
 @media (max-width: 1024px) {
+
     .video-card video {
         height: 180px;
     }
+
 }
 
 @media (max-width: 768px) {
+
     .header h2 {
         font-size: 1.8rem;
     }
@@ -687,9 +612,11 @@
     .video-card video {
         height: 160px;
     }
+
 }
 
 @media (max-width: 480px) {
+
     .video-card {
         min-width: 180px;
     }
@@ -697,14 +624,14 @@
     .video-card video {
         height: 140px;
     }
+
 }
 
 
+/* SHORT VIDEO SECTION  */
 
-/* ===== Responsive for short video why famouse ===== */
-
-/* Tablets */
 @media (max-width: 1024px) {
+
     .pop-text h2 {
         font-size: 2rem;
     }
@@ -713,13 +640,13 @@
         gap: 30px;
         padding: 40px 20px;
     }
+
 }
 
-/* Small tablets / large phones */
 @media (max-width: 768px) {
+
     .popularity {
         flex-direction: column;
-        /* stack image & text vertically */
         gap: 30px;
         padding: 30px 15px;
     }
@@ -736,14 +663,14 @@
     .pop-text .btn-start {
         display: block;
         margin: 0 auto;
-        /* center button */
         font-size: 0.95rem;
         padding: 12px 25px;
     }
+
 }
 
-/* Mobile phones */
 @media (max-width: 480px) {
+
     .popularity {
         padding: 20px 10px;
         gap: 20px;
@@ -761,45 +688,44 @@
         font-size: 0.9rem;
         padding: 10px 20px;
     }
+
 }
 
 
-/* frequently ask question */
-
+/*  FAQ  */
 
 @media (max-width: 600px) {
+
     .faq-container {
         padding: 10px;
     }
+
 }
 
 
-/* footer design here */
+/*  FOOTER  */
 
-/* Tablet View (992px) */
 @media (max-width: 992px) {
+
     .footer-top {
         grid-template-columns: 1fr 1fr;
-        /* 2x2 Grid */
         gap: 50px 30px;
     }
 
-    /* Make About and Contact take full width to ground the design */
     .footer-col.about,
     .footer-col.contact {
         grid-column: span 2;
         background: #fdfbff;
-        /* Subtle background for priority sections */
         padding: 30px;
         border-radius: 20px;
     }
+
 }
 
-/* Mobile View (600px) */
 @media (max-width: 600px) {
+
     .footer-top {
         grid-template-columns: 1fr;
-        /* Single column */
         text-align: center;
     }
 
@@ -813,7 +739,6 @@
         margin-bottom: 15px;
     }
 
-    /* Underline headers on mobile for visual separation */
     .footer-col h3::after {
         content: '';
         display: block;
@@ -838,6 +763,6 @@
 
     .footer-col ul li a:hover {
         transform: translateY(-3px);
-        /* Pop up on mobile instead of sliding */
     }
+
 }
